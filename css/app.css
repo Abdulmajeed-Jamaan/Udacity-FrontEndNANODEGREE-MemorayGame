@@ -17,7 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -42,13 +43,69 @@ h1 {
     min-height: 680px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
-    border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: 0 0 3em;
+    border-radius: 10px;
+}
+
+.deck__container {
+    width: 660px;
+    min-height: 680px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    opacity: 0.8;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.start {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.start__button {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    cursor: pointer;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    box-shadow: 0px 5px 25px 0 rgb(46, 61, 73);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.start__button:hover {
+
+    box-shadow: 0px 5px 50px 10px rgba(255, 255, 255, 0.473);
+
 }
 
 .deck .card {
@@ -81,14 +138,23 @@ h1 {
     font-size: 33px;
 }
 
+.deck .card.diff {
+    cursor: default;
+    background: #cc5302;
+    font-size: 33px;
+}
+
 /*
  * Styles for the Score Panel
  */
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 600px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .score-panel .stars {
@@ -106,4 +172,99 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.win__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 15px;
+    width: 550px;
+    height: 550px;
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.win__container h1 {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.win__container p {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+
+.win__stars {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-top: 0;
+}
+
+.win__again {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    cursor: pointer;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
 }
