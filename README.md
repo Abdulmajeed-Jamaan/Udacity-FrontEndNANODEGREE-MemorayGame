@@ -1,20 +1,27 @@
-# Memory Game Project
+# About the project
+The memory game presents the opportunity to fully combine your skills in HTML, CSS, and JavaScript into a large project. Aside from solidifying your skills with these three technologies, you'll discover how best to combine them in a complex application.
 
-## Table of Contents
+## Memory Game
+The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+## Quickstart
+1. Download the project .
+2. Run `index.html` file in the browser .
+3. You can start the game now .
 
-## Instructions
+## The Code 
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+the main functions are :
+* startTheGame (for startign the game and start the timer).
+* checkMatch (for checking if the two picked card match).
+* reset (for reseting the game).
 
-To get started, open `js/app.js` and start building out the app's functionality
+the events listneres are :
+* Start the game button .
+* Deck Container .
+* Restart Button .
+* Play Again Button .
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+then there are **Helpers** methods that called by the main methods .. check out the `js/app.js` file for more details
 
-## Contributing
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).

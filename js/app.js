@@ -188,7 +188,7 @@ function shuffle(array) {
 
 // _____________________________________ if the use win ___________________________________
 function win() {
-    winTime.textContent = 'time' + timerElement.textContent;
+    winTime.textContent = `time  ${timerElement.textContent}`;
     winMoves.textContent = 'Moves' + moves;
     winStars.innerHTML = starsElement.innerHTML;
 }
